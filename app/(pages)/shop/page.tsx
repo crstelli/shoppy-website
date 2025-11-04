@@ -1,7 +1,15 @@
+import { ProductsList } from "../(components)/ProductsList";
+import { Title } from "../(components)/Title";
+
 export const metadata = {
   title: "Shop",
 };
 
 export default function page() {
-  return <div>Page</div>;
+  return (
+    <>
+      <Title>Our Products</Title>
+      <ProductsList />
+    </>
+  );
 }

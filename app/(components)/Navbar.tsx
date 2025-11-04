@@ -6,7 +6,7 @@ import { Navigation } from "./Navigation";
 
 function Navbar() {
   return (
-    <nav className="mt-10 flex items-center justify-between">
+    <nav className="flex items-center justify-between">
       <Link href="/">
         <Image src={logo} alt="Comprany logo" width={52} height={52} />
       </Link>

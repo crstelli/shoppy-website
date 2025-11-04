@@ -5,6 +5,7 @@ import bg from "@/public/background.jpg";
 
 import { TextLogo } from "@/app/(components)/TextLogo";
 import { Navigation } from "@/app/(components)/Navigation";
+import { Button } from "../(components)/Button";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
             href="/shop"
             className="bg-emerald-500 hover:bg-emerald-600 cursor-pointer self-center uppercase mt-10 text-xl px-4 py-1 rounded-md text-gray-900 font-bold"
           >
+            {/* as property ? */}
             Go to our store
           </Link>
         </div>
