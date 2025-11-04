@@ -1,14 +1,14 @@
+import { fetchProducts } from "@/app/(services)/apiProducts";
 import { Product } from "./Product";
 
-function ProductsList() {
+async function ProductsList() {
+  const products = await fetchProducts();
+
   return (
     <div className="grid grid-cols-2 gap-y-20 mt-12">
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
+      {products?.map((p) => (
+        <Product product={p} key={p.id} />
+      ))}
     </div>
   );
 }

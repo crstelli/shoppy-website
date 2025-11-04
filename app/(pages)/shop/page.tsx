@@ -5,7 +5,7 @@ export const metadata = {
   title: "Shop",
 };
 
-export default function page() {
+export default async function page() {
   return (
     <>
       <Title>Our Products</Title>
