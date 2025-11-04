@@ -9,7 +9,7 @@ export default function Home() {
         <Navigation />
       </div>
       <div className="mt-auto mb-auto self-center flex flex-col">
-        <h1 className="text-8xl">Welcome</h1>
+        <h1 className="text-8xl">-Welcome-</h1>
         <button className="bg-emerald-500 hover:bg-emerald-600 cursor-pointer self-center uppercase mt-10 text-xl px-4 py-1 rounded-md text-gray-900 font-bold">
           Go to our store
         </button>
