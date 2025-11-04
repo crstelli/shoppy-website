@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "@/app/(styles)/globals.css";
 
 import { Quicksand } from "next/font/google";
 

@@ -1,3 +1,5 @@
+import "@/app/(styles)/globals.css";
+
 import { Navbar } from "@/app/(components)/Navbar";
 
 interface Props {
