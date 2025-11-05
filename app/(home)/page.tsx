@@ -27,7 +27,7 @@ export default function Home() {
           <h1 className="text-8xl">-Welcome-</h1>
           <Link
             href="/shop"
-            className="bg-emerald-500 hover:bg-emerald-600 cursor-pointer self-center uppercase mt-10 text-xl px-4 py-1 rounded-md text-gray-900 font-bold"
+            className="bg-emerald-500 hover:bg-emerald-600 cursor-pointer self-center uppercase mt-19 text-xl px-4 py-2 rounded-md text-gray-900 font-bold"
           >
             {/* as property ? */}
             Go to our store

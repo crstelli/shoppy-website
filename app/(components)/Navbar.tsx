@@ -8,7 +8,13 @@ function Navbar() {
   return (
     <nav className="flex items-center justify-between">
       <Link href="/">
-        <Image src={logo} alt="Comprany logo" width={52} height={52} />
+        <Image
+          src={logo}
+          alt="Comprany logo"
+          width={52}
+          height={52}
+          className="hover:rotate-45 duration-400"
+        />
       </Link>
       <Navigation />
     </nav>
