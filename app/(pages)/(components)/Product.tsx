@@ -1,4 +1,8 @@
 import { Button } from "@/app/(components)/Button";
+import { Tag } from "@/app/(components)/Tag";
+
+import { getTagStyle } from "@/app/(lib)/getTagStyle";
+
 import type { Product } from "@/app/(interfaces)/Product";
 
 interface Props {
@@ -6,9 +10,14 @@ interface Props {
 }
 
 function Product({ product }: Props) {
+  const tagClasses = getTagStyle(product.status);
+
   return (
-    <div className="rounded-md mx-auto overflow-hidden bg-gray-800 border border-gray-700 flex flex-col items-center w-80">
-      <div className="w-full aspect-3/2 bg-emerald-500"></div>
+    <div className="rounded-md mx-auto relative bg-gray-800 border border-gray-700 flex flex-col items-center w-80">
+      <Tag classes={`absolute -left-5 -top-2 ${tagClasses}`}>
+        {product.status}
+      </Tag>
+      <div className="w-full aspect-3/2 bg-emerald-100"></div>
       <div className="py-4 text-center px-7 flex flex-col h-full gap-2">
         <h2 className="text-2xl">{product.name}</h2>
         <p className="text-gray-400 grow">{product.description}</p>
