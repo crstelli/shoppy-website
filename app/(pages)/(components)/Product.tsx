@@ -7,6 +7,7 @@ import type { Product } from "@/app/(interfaces)/Product";
 
 import { Button } from "@/app/(components)/Button";
 import { Tag } from "@/app/(components)/Tag";
+import Image from "next/image";
 
 interface Props {
   product: Product;
@@ -22,7 +23,14 @@ function Product({ product }: Props) {
       <Tag classes={`absolute -left-5 -top-2 ${tagClasses}`}>
         {product.status}
       </Tag>
-      <div className="w-full aspect-3/2 bg-emerald-200"></div>
+      <div className="w-full aspect-3/2 relative">
+        <Image
+          src={product.image_path}
+          alt="Product image"
+          fill
+          className="object-cover object-center"
+        />
+      </div>
       <div className="py-4 text-center px-7 flex flex-col h-full gap-2">
         <h2 className="text-2xl">{product.name}</h2>
         <p className="text-gray-400 grow">{product.description}</p>

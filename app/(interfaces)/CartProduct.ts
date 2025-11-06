@@ -3,4 +3,5 @@ export interface CartProduct {
   name: string;
   quantity: number;
   id: number;
+  image_path: string;
 }

@@ -16,12 +16,12 @@ function Counter({ id, quantity }: CounterProps) {
 
   return (
     <div className="row-span-3 flex gap-3 items-center justify-center">
-      <Item onClick={() => editQuantity(id, 1)}>
-        <Plus />
-      </Item>
-      <span className="text-3xl">{quantity}</span>
       <Item onClick={() => editQuantity(id, -1)}>
         <Minus />
+      </Item>
+      <span className="text-3xl">{quantity}</span>
+      <Item onClick={() => editQuantity(id, 1)}>
+        <Plus />
       </Item>
     </div>
   );

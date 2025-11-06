@@ -8,7 +8,7 @@ interface Props {
 function Tag({ children, classes }: Props) {
   return (
     <span
-      className={`px-4 py-1 rounded-full uppercase text-white font-semilight ${classes}`}
+      className={`px-4 py-1 rounded-full uppercase text-white font-semilight z-1 ${classes}`}
     >
       {children}
     </span>
