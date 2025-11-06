@@ -1,6 +1,7 @@
 import "@/app/(styles)/globals.css";
 
 import { Quicksand } from "next/font/google";
+import { CartProvider } from "@/app/(contexts)/CartContext";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`w-screen h-screen relative flex ${quicksand.className}`}
       >
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
