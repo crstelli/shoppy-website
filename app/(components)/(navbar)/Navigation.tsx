@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { Cart } from "./Cart";
 
 interface ItemProps {
   children: string;
@@ -12,7 +12,7 @@ function Navigation() {
       <Item>About</Item>
       <Item>Contact</Item>
       <Link href="/cart" className="hover:text-gray-400 duration-150">
-        <ShoppingCart size={35} className="ml-4" />
+        <Cart />
       </Link>
     </ul>
   );

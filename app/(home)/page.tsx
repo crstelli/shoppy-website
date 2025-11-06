@@ -4,7 +4,7 @@ import Image from "next/image";
 import bg from "@/public/background.jpg";
 
 import { TextLogo } from "@/app/(components)/TextLogo";
-import { Navigation } from "@/app/(components)/Navigation";
+import { Navigation } from "@/app/(components)/(navbar)/Navigation";
 import { Button } from "../(components)/Button";
 
 export default function Home() {

@@ -1,9 +1,12 @@
-import { Button } from "@/app/(components)/Button";
-import { Tag } from "@/app/(components)/Tag";
+"use client";
 
+import { useCart } from "../../(contexts)/useCart";
 import { getTagStyle } from "@/app/(lib)/getTagStyle";
 
 import type { Product } from "@/app/(interfaces)/Product";
+
+import { Button } from "@/app/(components)/Button";
+import { Tag } from "@/app/(components)/Tag";
 
 interface Props {
   product: Product;
@@ -11,6 +14,8 @@ interface Props {
 
 function Product({ product }: Props) {
   const tagClasses = getTagStyle(product.status);
+
+  const { addToCart } = useCart();
 
   return (
     <div className="rounded-md mx-auto relative bg-gray-800 border border-gray-700 flex flex-col items-center w-80">
@@ -24,7 +29,7 @@ function Product({ product }: Props) {
         {product.status !== "sold out" && (
           <div className="grid grid-cols-[1fr_3fr_1fr] items-center mt-4 self-center gap-4">
             <span className="text-xl">${product.price}</span>
-            <Button>Add to Cart</Button>
+            <Button onClick={() => addToCart(product)}>Add to Cart</Button>
             <span className="text-gray-500">{product.quantity} left</span>
           </div>
         )}
