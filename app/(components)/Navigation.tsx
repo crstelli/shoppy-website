@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ShoppingCart } from "lucide-react";
 
 interface ItemProps {
   children: string;
@@ -6,10 +7,13 @@ interface ItemProps {
 
 function Navigation() {
   return (
-    <ul className="flex gap-6 text-2xl">
+    <ul className="flex gap-6 text-2xl items-center">
       <Item>Shop</Item>
       <Item>About</Item>
       <Item>Contact</Item>
+      <Link href="/cart" className="hover:text-gray-400 duration-150">
+        <ShoppingCart size={35} className="ml-4" />
+      </Link>
     </ul>
   );
 }

@@ -9,10 +9,10 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <html lang="en">
-      <body className="w-full min-h-screen bg-gray-900 text-gray-300 py-10">
-        <div className="w-[90%] max-w-[1100px] h-full mx-auto flex flex-col">
+      <body className="w-full min-h-screen bg-gray-900 text-gray-300 py-10 flex flex-col">
+        <div className="w-[90%] max-w-[1100px] flex flex-col h-full mx-auto grow">
           <Navbar />
-          <main className="flex flex-col">{children}</main>
+          <main className="flex flex-col grow">{children}</main>
         </div>
       </body>
     </html>
