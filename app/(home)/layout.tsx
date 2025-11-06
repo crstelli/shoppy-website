@@ -1,9 +1,9 @@
 import "@/app/(styles)/globals.css";
 
-import { Quicksand } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { CartProvider } from "@/app/(contexts)/CartContext";
 
-const quicksand = Quicksand({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
 });
@@ -24,9 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body
-        className={`w-screen h-screen relative flex ${quicksand.className}`}
-      >
+      <body className={`w-screen h-screen relative flex ${outfit.className}`}>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>
