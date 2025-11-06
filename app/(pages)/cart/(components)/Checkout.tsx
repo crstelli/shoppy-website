@@ -4,7 +4,7 @@ import { useCart } from "@/app/(contexts)/useCart";
 import { createOrder } from "@/app/(lib)/actions";
 
 function Checkout() {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
 
   return (
     <div className="bg-gray-800 p-4 row-span-2 rounded-md flex flex-col">
@@ -12,6 +12,7 @@ function Checkout() {
         <Button
           onClick={() => {
             createOrder(cart);
+            clearCart();
           }}
           classes="mt-auto"
         >

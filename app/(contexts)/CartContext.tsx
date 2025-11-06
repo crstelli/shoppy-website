@@ -7,6 +7,7 @@ interface ContextValue {
   cart: CartProduct[];
   addToCart: (product: CartProduct) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
   editQuantity: (id: number, difference: number) => void;
 }
 
@@ -49,6 +50,10 @@ export function CartProvider({ children }: Props) {
     setCart((products) => products.filter((p) => p.id !== id));
   }
 
+  function clearCart() {
+    setCart([]);
+  }
+
   function editQuantity(id: number, difference: number) {
     setCart((products) =>
       products.map((p) => {
@@ -65,7 +70,7 @@ export function CartProvider({ children }: Props) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, editQuantity, removeFromCart }}
+      value={{ cart, addToCart, editQuantity, removeFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
