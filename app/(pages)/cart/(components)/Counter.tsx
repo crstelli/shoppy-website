@@ -15,13 +15,13 @@ function Counter({ id, quantity }: CounterProps) {
   const { editQuantity } = useCart();
 
   return (
-    <div className="row-span-3 flex gap-3 items-center justify-center">
+    <div className="row-span-2 flex gap-4 items-center justify-center">
       <Item onClick={() => editQuantity(id, -1)}>
-        <Minus />
+        <Minus size={20} />
       </Item>
       <span className="text-3xl">{quantity}</span>
       <Item onClick={() => editQuantity(id, 1)}>
-        <Plus />
+        <Plus size={20} />
       </Item>
     </div>
   );

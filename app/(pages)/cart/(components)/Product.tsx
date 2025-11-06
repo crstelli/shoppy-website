@@ -27,6 +27,7 @@ function Product({ product }: Props) {
       <h2 className="text-2xl font-bold">{product.name}</h2>
       <Counter id={product.id} quantity={product.quantity} />
       <h3 className="text-gray-400 text-lg">${product.price}</h3>
+      <div></div>
       <Button onClick={() => removeFromCart(product.id)}>Remove</Button>
     </div>
   );
