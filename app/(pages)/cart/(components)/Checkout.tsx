@@ -1,12 +1,14 @@
+"use client";
+
 import { Button } from "@/app/(components)/Button";
 import { useCart } from "@/app/(contexts)/useCart";
 
 import { createOrder } from "@/app/(lib)/actions";
 import { useState } from "react";
 
-function Checkout() {
+function Checkout({ defaultAddress }: { defaultAddress: string }) {
   const { cart, clearCart } = useCart();
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState(defaultAddress);
   const total = cart.reduce(
     (acc, product) => acc + product.quantity * product.price,
     0
