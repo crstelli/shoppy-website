@@ -4,7 +4,6 @@ import Image from "next/image";
 import bg from "@/public/background.jpg";
 
 import { TextLogo } from "@/app/(components)/TextLogo";
-import { Navigation } from "@/app/(components)/(navbar)/Navigation";
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <div className="w-[90%] mx-auto max-w-[1100px] flex flex-col text-gray-300 ">
         <div className="mt-10 flex items-center justify-between">
           <TextLogo />
-          <Navigation />
         </div>
         <div className="mt-auto mb-auto self-center flex flex-col">
           <h1 className="text-8xl">-Welcome-</h1>
