@@ -1,7 +1,8 @@
 import "@/app/(styles)/globals.css";
-
 import { Outfit } from "next/font/google";
+
 import { CartProvider } from "@/app/(contexts)/CartContext";
+import { Footer } from "../(components)/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -24,8 +25,11 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`w-screen h-screen relative flex ${outfit.className}`}>
-        <CartProvider>{children}</CartProvider>
+      <body className={`max-w-screen flex flex-col ${outfit.className}`}>
+        <div className="h-screen relative flex">
+          <CartProvider>{children}</CartProvider>
+        </div>
+        <Footer />
       </body>
     </html>
   );
