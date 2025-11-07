@@ -19,7 +19,7 @@ function Product({ product }: Props) {
   const { addToCart } = useCart();
 
   return (
-    <div className="rounded-md mx-auto relative bg-gray-800 border border-gray-700 flex flex-col items-center w-80">
+    <div className="rounded-md mx-auto relative bg-gray-800 border border-gray-700 flex flex-col items-center w-82">
       <Tag classes={`absolute -left-5 -top-2 ${tagClasses}`}>
         {product.status}
       </Tag>

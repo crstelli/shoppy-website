@@ -31,29 +31,32 @@ function Checkout() {
           </span>
         </div>
       ))}
-      <input
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-        type="text"
-        className="bg-gray-900 px-2 py-1 placeholder:text-gray-400 text-gray-300 rounded-md mt-auto"
-        placeholder="Delivery address"
-      />
-      <p className="text-center text-xl mt-4">
+
+      <p className="text-center text-xl mt-auto">
         Total: ${total.toLocaleString()}
       </p>
       {cart.length > 0 && (
-        <Button
-          onClick={() => {
-            if (address.length > 3) {
-              createOrder(cart, address);
-              clearCart();
-              setAddress("");
-            }
-          }}
-          classes="mt-4"
-        >
-          Checkout
-        </Button>
+        <>
+          <input
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            type="text"
+            className="bg-gray-900 px-2 py-1 text-center placeholder:text-gray-400 text-gray-300 rounded-md mt-4"
+            placeholder="Delivery address"
+          />
+          <Button
+            onClick={() => {
+              if (address.length > 3) {
+                createOrder(cart, address);
+                clearCart();
+                setAddress("");
+              }
+            }}
+            classes="mt-4"
+          >
+            Checkout
+          </Button>
+        </>
       )}
     </div>
   );
