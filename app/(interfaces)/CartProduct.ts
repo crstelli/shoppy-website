@@ -4,4 +4,5 @@ export interface CartProduct {
   quantity: number;
   id: number;
   image_path: string;
+  max_quantity: number;
 }

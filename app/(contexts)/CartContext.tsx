@@ -41,6 +41,7 @@ export function CartProvider({ children }: Props) {
           name: product.name,
           price: product.price,
           image_path: product.image_path,
+          maxQuantity: product.quantity,
           quantity: 1,
         },
       ];
