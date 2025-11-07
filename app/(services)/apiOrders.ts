@@ -44,3 +44,13 @@ export async function fetchDeliveryPrice() {
   if (error) throw error;
   return data.delivery_price;
 }
+
+export async function getOrders(uuid: string) {
+  const { data, error } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("user_id", uuid);
+
+  if (error) throw error;
+  return data;
+}
