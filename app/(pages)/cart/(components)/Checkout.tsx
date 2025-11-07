@@ -5,6 +5,7 @@ import { useCart } from "@/app/(contexts)/useCart";
 
 import { createOrder } from "@/app/(lib)/actions";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 function Checkout({ defaultAddress }: { defaultAddress: string }) {
   const { cart, clearCart } = useCart();
@@ -50,8 +51,11 @@ function Checkout({ defaultAddress }: { defaultAddress: string }) {
             onClick={() => {
               if (address.length > 3) {
                 createOrder(cart, address);
+
                 clearCart();
                 setAddress("");
+
+                toast.success("Order made succesfully");
               }
             }}
             classes="mt-4"

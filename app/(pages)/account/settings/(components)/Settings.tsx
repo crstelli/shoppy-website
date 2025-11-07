@@ -2,6 +2,7 @@
 
 import { updateAddress } from "@/app/(lib)/actions";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 function Settings() {
   const [address, setAddress] = useState("");
@@ -14,6 +15,8 @@ function Settings() {
           e.preventDefault();
           updateAddress(address);
           setAddress("");
+
+          toast.success("Address updated successfully.");
         }}
       >
         <label>Your Default Address</label>

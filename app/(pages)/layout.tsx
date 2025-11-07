@@ -4,6 +4,7 @@ import { CartProvider } from "../(contexts)/CartContext";
 
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
 import { Footer } from "@/app/(components)/Footer";
+import { Toaster } from "react-hot-toast";
 
 interface Props {
   children: React.ReactNode;
@@ -20,6 +21,14 @@ export default function Layout({ children }: Props) {
       <body
         className={`w-full min-h-screen bg-gray-900 text-gray-300 flex flex-col ${outfit.className}`}
       >
+        <Toaster
+          toastOptions={{
+            style: {
+              background: "#333",
+              color: "#fff",
+            },
+          }}
+        />
         <CartProvider>
           <div className="w-[90%] max-w-[1100px] min-h-screen flex flex-col py-10 mx-auto grow">
             <Navbar />

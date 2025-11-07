@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import type { FilterProps } from "./ProductsList";
 import { useRouter } from "next/navigation";
 
