@@ -7,7 +7,6 @@ import { Navigation } from "./Navigation";
 
 async function Navbar() {
   const session = await auth();
-  console.log(session);
 
   return (
     <nav className="flex items-center justify-between">

@@ -1,5 +1,3 @@
-function page() {
+export default function page() {
   return <div>Orders</div>;
 }
-
-export { page };
