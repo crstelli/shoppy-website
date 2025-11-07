@@ -2,11 +2,11 @@ import "@/app/(styles)/globals.css";
 import { Outfit } from "next/font/google";
 
 import { CartProvider } from "@/app/(contexts)/CartContext";
-import { Footer } from "../(components)/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
+  weight: ["100", "400", "700"],
 });
 
 interface Props {
@@ -25,11 +25,12 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`max-w-screen flex flex-col ${outfit.className}`}>
+      <body
+        className={`max-w-screen selection:bg-emerald-500 selection:text-gray-800 flex flex-col ${outfit.className}`}
+      >
         <div className="h-screen relative flex">
           <CartProvider>{children}</CartProvider>
         </div>
-        <Footer />
       </body>
     </html>
   );
