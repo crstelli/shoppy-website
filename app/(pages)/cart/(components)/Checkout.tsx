@@ -2,9 +2,11 @@ import { Button } from "@/app/(components)/Button";
 import { useCart } from "@/app/(contexts)/useCart";
 
 import { createOrder } from "@/app/(lib)/actions";
+import { useState } from "react";
 
 function Checkout() {
   const { cart, clearCart } = useCart();
+  const [address, setAddress] = useState("");
   const total = cart.reduce(
     (acc, product) => acc + product.quantity * product.price,
     0
@@ -29,14 +31,24 @@ function Checkout() {
           </span>
         </div>
       ))}
-      <p className="text-center text-xl mt-auto">
+      <input
+        value={address}
+        onChange={(e) => setAddress(e.target.value)}
+        type="text"
+        className="bg-gray-900 px-2 py-1 placeholder:text-gray-400 text-gray-300 rounded-md mt-auto"
+        placeholder="Delivery address"
+      />
+      <p className="text-center text-xl mt-4">
         Total: ${total.toLocaleString()}
       </p>
       {cart.length > 0 && (
         <Button
           onClick={() => {
-            createOrder(cart);
-            clearCart();
+            if (address.length > 3) {
+              createOrder(cart, address);
+              clearCart();
+              setAddress("");
+            }
           }}
           classes="mt-4"
         >

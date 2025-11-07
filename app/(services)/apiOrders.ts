@@ -29,3 +29,13 @@ export async function fetchOrderItem(item: OrderItem) {
   if (error) throw error;
   return data;
 }
+
+export async function fetchDeliveryPrice() {
+  const { data, error } = await supabase
+    .from("settings")
+    .select("delivery_price")
+    .single();
+
+  if (error) throw error;
+  return data.delivery_price;
+}
