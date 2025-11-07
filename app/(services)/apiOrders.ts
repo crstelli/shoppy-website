@@ -2,11 +2,16 @@ import { supabase } from "./supabase";
 
 import type { OrderItem } from "../(interfaces)/OrderItem";
 
-export async function fetchOrder(total: number, address: string, user: string) {
+export async function fetchOrder(
+  total: number,
+  address: string,
+  user_id: string
+) {
   const newOrder = {
     status: "received",
     address,
     total,
+    user_id,
   };
 
   const { data: orderData, error: orderError } = await supabase

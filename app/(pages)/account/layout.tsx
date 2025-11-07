@@ -24,7 +24,7 @@ export default function Layout({ children }: LayoutProps) {
           <NavItem>Orders</NavItem>
           <NavItem>Settings</NavItem>
           <form
-            className="hover:bg-gray-900 px-6 py-4 cursor-pointer mt-auto"
+            className="hover:bg-gray-900 px-10 py-4 cursor-pointer mt-auto"
             action={signOutAction}
           >
             <button type="submit" className="cursor-pointer">
@@ -45,7 +45,7 @@ function NavItem({ children, classes }: NavProps) {
   return (
     <Link href={children.toLowerCase()}>
       <li
-        className={`hover:bg-gray-900 px-6 py-4 cursor-pointer ${classes} ${
+        className={`hover:bg-gray-900 px-10 py-4 cursor-pointer ${classes} ${
           isActive && "bg-gray-900"
         }`}
       >

@@ -22,7 +22,7 @@ async function Navbar() {
       <div className="flex items-center gap-4">
         <Navigation />
         {session?.user ? (
-          <Link href={"/account"}>
+          <Link href={"/account/home"}>
             <div className="flex items-center gap-2 cursor-pointer">
               <img
                 src={session.user.image ?? undefined}
