@@ -1,3 +1,5 @@
-export default function page() {
-  return <div>Settings</div>;
+import { Settings } from "./(components)/Settings";
+
+export default async function page() {
+  return <Settings />;
 }

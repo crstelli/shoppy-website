@@ -8,7 +8,7 @@ import {
 import type { OrderItem } from "../(interfaces)/OrderItem";
 import { CartProduct } from "../(interfaces)/CartProduct";
 import { auth } from "./auth";
-import { getCustomer } from "../(services)/apiCustomers";
+import { getCustomer, updateCustomer } from "../(services)/apiCustomers";
 
 export async function createOrder(cart: CartProduct[], address: string) {
   const session = await auth();
@@ -28,4 +28,11 @@ export async function createOrder(cart: CartProduct[], address: string) {
   }));
 
   products.forEach((p: OrderItem) => fetchOrderItem(p));
+}
+
+export async function updateAddress(newAddress: string) {
+  const session = await auth();
+  const userId = (await getCustomer(session?.user.email)).uuid;
+
+  await updateCustomer(userId, newAddress);
 }

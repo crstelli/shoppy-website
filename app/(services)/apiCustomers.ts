@@ -19,3 +19,13 @@ export async function createCustomer(email: string, full_name: string) {
   if (error) throw error;
   return data;
 }
+
+export async function updateCustomer(user, address) {
+  const { data, error } = await supabase
+    .from("customers")
+    .update({ address })
+    .eq("uuid", user);
+
+  if (error) throw error;
+  return data;
+}
