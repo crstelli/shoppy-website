@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 function Filter({ filter }: FilterProps) {
   return (
-    <div className="text-xl flex gap-2 mt-10 ml-auto">
+    <div className="text-xl flex gap-2 ml-auto">
       <Item filter={filter}>All</Item>
       <Item filter={filter}>Active</Item>
       <Item filter={filter}>Soldout</Item>
