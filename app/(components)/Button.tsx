@@ -1,12 +1,14 @@
 interface Props {
   children: string;
-  onClick: () => void;
+  onClick?: () => void;
   classes?: React.ComponentProps<"button">["className"];
+  type?: "submit" | "reset" | "button";
 }
 
-function Button({ children, classes, onClick }: Props) {
+function Button({ children, classes, type = "button", onClick }: Props) {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`bg-emerald-500 hover:bg-emerald-600 cursor-pointer duration-150 self-center uppercase px-4 py-1 rounded-md text-gray-900 font-semibold ${classes}`}
     >

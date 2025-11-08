@@ -43,7 +43,7 @@ function NavItem({ children, classes }: NavProps) {
   const isActive = pathname.startsWith(`/account/${children.toLowerCase()}`);
 
   return (
-    <Link href={children.toLowerCase()}>
+    <Link href={`/account/${children.toLowerCase()}`}>
       <li
         className={`hover:bg-gray-900 px-10 py-4 cursor-pointer ${classes} ${
           isActive && "bg-gray-900"

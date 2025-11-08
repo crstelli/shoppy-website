@@ -54,3 +54,30 @@ export async function getOrders(uuid: string) {
   if (error) throw error;
   return data;
 }
+
+export async function getOrder(id: number) {
+  const { data, error } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) throw error;
+  return data;
+}
+
+export async function deleteOrder(orderId: number) {
+  const { error: productsError } = await supabase
+    .from("order_items")
+    .delete()
+    .eq("order_id", orderId);
+
+  if (productsError) throw productsError;
+
+  const { error: orderError } = await supabase
+    .from("orders")
+    .delete()
+    .eq("id", orderId);
+
+  if (orderError) throw orderError;
+}

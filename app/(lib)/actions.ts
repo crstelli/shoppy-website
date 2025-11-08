@@ -1,6 +1,7 @@
 "use server";
 
 import {
+  deleteOrder,
   fetchDeliveryPrice,
   fetchOrder,
   fetchOrderItem,
@@ -35,4 +36,8 @@ export async function updateAddress(newAddress: string) {
   const userId = (await getCustomer(session?.user.email)).uuid;
 
   await updateCustomer(userId, newAddress);
+}
+
+export async function cancelOrder(orderId: number) {
+  deleteOrder(orderId);
 }
