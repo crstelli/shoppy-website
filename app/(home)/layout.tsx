@@ -1,8 +1,6 @@
 import "@/app/(styles)/globals.css";
 import { Outfit } from "next/font/google";
 
-import { CartProvider } from "@/app/(contexts)/CartContext";
-
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
@@ -28,9 +26,7 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`max-w-screen selection:bg-emerald-500 selection:text-gray-800 flex flex-col ${outfit.className}`}
       >
-        <div className="h-screen relative flex">
-          <CartProvider>{children}</CartProvider>
-        </div>
+        <div className="h-screen relative flex">{children}</div>
       </body>
     </html>
   );

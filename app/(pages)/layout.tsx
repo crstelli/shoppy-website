@@ -1,11 +1,12 @@
 import "@/app/(styles)/globals.css";
+import { Toaster } from "react-hot-toast";
+
 import { Outfit } from "next/font/google";
 import { CartProvider } from "../(contexts)/CartContext";
+import { CartMessage } from "./shop/(components)/CartMessage";
 
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
 import { Footer } from "@/app/(components)/Footer";
-import { Toaster } from "react-hot-toast";
-import { CartMessage } from "./shop/(components)/CartMessage";
 
 interface Props {
   children: React.ReactNode;

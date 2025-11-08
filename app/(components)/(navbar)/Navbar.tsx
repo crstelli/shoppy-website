@@ -1,51 +1,63 @@
 import Link from "next/link";
 import Image from "next/image";
-import { auth, signIn } from "@/app/(lib)/auth";
 
+import { auth, signIn } from "@/app/(lib)/auth";
 import logo from "@/public/logo.svg";
+
 import { Navigation } from "./Navigation";
+import { User } from "lucide-react";
+import { Cart } from "./Cart";
 
 async function Navbar() {
   const session = await auth();
 
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="grid grid-cols-3 shadow-2xl bg-gray-800 rounded-full px-10 py-2">
       <Link href="/">
         <Image
           src={logo}
           alt="Comprany logo"
-          width={52}
-          height={52}
+          width={42}
+          height={42}
           className="hover:rotate-45 duration-400"
         />
       </Link>
-      <div className="flex items-center gap-4">
-        <Navigation />
-        {session?.user ? (
-          <Link href={"/account/home"}>
-            <div className="flex items-center gap-2 cursor-pointer">
-              <img
-                src={session.user.image ?? undefined}
-                alt="Image of the user"
-                className="size-8 rounded-full"
-              />
-              <span>{session.user.name}</span>
-            </div>
+      <Navigation />
+      {session?.user ? (
+        <div className="flex justify-self-end items-center gap-6 cursor-pointer">
+          <Link href="/cart">
+            <Cart />
           </Link>
-        ) : (
-          <form
-            className="bg-gray-950 px-4 py-2 rounded-md"
-            action={async () => {
-              "use server";
-              await signIn("google", { redirectTo: "/account/home" });
-            }}
+          <Link href={"/account/home"}>
+            {session.user?.image ? (
+              <div className="relative w-[42px] aspect-square">
+                <Image
+                  fill
+                  src={session.user.image}
+                  alt="Image of the user"
+                  className="rounded-full border border-gray-600 hover:scale-105 duration-150"
+                />
+              </div>
+            ) : (
+              <User />
+            )}
+          </Link>
+        </div>
+      ) : (
+        <form
+          action={async () => {
+            "use server";
+            await signIn("google", { redirectTo: "/account/home" });
+          }}
+        >
+          <button
+            type="submit"
+            className="bg-gray-900 hover:bg-gray-950 duration-150 px-4 py-1 rounded-md cursor-pointer text-lg"
           >
-            <button type="submit" className="cursor-pointer">
-              Sign in with Google
-            </button>
-          </form>
-        )}
-      </div>
+            Log In
+          </button>
+        </form>
+      )}
     </nav>
   );
 }
