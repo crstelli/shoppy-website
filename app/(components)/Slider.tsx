@@ -1,15 +1,20 @@
 import { Range } from "react-range";
 
-function Slider({ values, setValues }) {
+interface Props {
+  values: [number, number];
+  setValues: React.Dispatch<React.SetStateAction<[number, number]>>;
+}
+
+function Slider({ values, setValues }: Props) {
   return (
-    <div className="w-[200px] text-xl flex text-center gap-2 flex-col">
+    <div className="w-[250px] text-xl flex text-center gap-4 flex-col">
       <span>Price Range</span>
       <Range
         step={5}
         min={0}
         max={500}
         values={values}
-        onChange={setValues}
+        onChange={(vals) => setValues(vals as [number, number])}
         renderTrack={({ props, children }) => (
           <div {...props} className="h-1 bg-gray-700 rounded">
             {children}

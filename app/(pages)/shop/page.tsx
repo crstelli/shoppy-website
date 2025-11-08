@@ -1,41 +1,35 @@
 import { Suspense } from "react";
 
+import type { SearchParams } from "@/app/(interfaces)/SearchParams";
+import { getProducts } from "@/app/(services)/apiProducts";
+
 import { Spinner } from "@/app/(components)/Spinner";
+import { Title } from "@/app/(components)/Title";
 
-import { ProductsList } from "../(components)/ProductsList";
-import { Title } from "../(components)/Title";
-
-import { searchParams } from "@/app/(interfaces)/SearchParams";
-import { Pagination } from "./(components)/Pagination";
-import { fetchProducts } from "@/app/(services)/apiProducts";
-import { PAGE_SIZE } from "@/app/(lib)/constants";
+import { Shop } from "./(components)/Shop";
 
 export const metadata = {
   title: "Shop",
 };
 
-export default async function page({ searchParams }: searchParams) {
-  const filter = (await searchParams)?.status ?? "all";
+export default async function page({ searchParams }: SearchParams) {
+  const products = (await getProducts()) || [];
+
+  const status = (await searchParams)?.status ?? "all";
   const page = Number((await searchParams)?.page ?? 1);
-
-  const products = await fetchProducts();
-
-  const displayedProducts =
-    filter === "all"
-      ? products
-      : products?.filter((prod) => prod.status.replaceAll(" ", "") === filter);
 
   return (
     <>
       <Title>Our Products</Title>
-      <Suspense fallback={<Spinner classes="mx-auto mt-20" />}>
-        <ProductsList
-          page={page}
-          filter={filter}
-          products={displayedProducts}
-        />
-      </Suspense>
-      <Pagination productsSize={displayedProducts?.length} />
+      {products?.length > 0 ? (
+        <Suspense fallback={<Spinner classes="mx-auto mt-20" />}>
+          <Shop products={products} status={status} page={page} />
+        </Suspense>
+      ) : (
+        <h2 className="text-center text-4xl my-auto">
+          We are sorry, we have no products now!
+        </h2>
+      )}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import "@/app/(styles)/globals.css";
 import { Toaster } from "react-hot-toast";
-
 import { Outfit } from "next/font/google";
+
 import { CartProvider } from "../(contexts)/CartContext";
 import { CartMessage } from "./shop/(components)/CartMessage";
 
@@ -26,8 +26,8 @@ export default function Layout({ children }: Props) {
         <Toaster
           toastOptions={{
             style: {
-              background: "#333",
-              color: "#fff",
+              background: "oklch(27.8% 0.033 256.848)",
+              color: "oklch(87.2% 0.01 258.338)",
             },
           }}
         />

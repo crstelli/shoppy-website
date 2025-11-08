@@ -1,3 +1,3 @@
-export interface searchParams {
+export interface SearchParams {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }

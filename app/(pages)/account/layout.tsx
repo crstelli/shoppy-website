@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Title } from "../(components)/Title";
+import { Title } from "../../(components)/Title";
 import Link from "next/link";
 import { signOutAction } from "@/app/(lib)/signOut";
 

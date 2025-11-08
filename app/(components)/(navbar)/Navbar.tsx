@@ -35,7 +35,7 @@ async function Navbar() {
                   fill
                   src={session.user.image}
                   alt="Image of the user"
-                  className="rounded-full border border-gray-600 hover:scale-105 duration-150"
+                  className="rounded-full border-2 border-gray-400 hover:scale-105 duration-150"
                 />
               </div>
             ) : (
