@@ -33,11 +33,15 @@ function Pagination({ productsSize }: Props) {
 
   return (
     <div className="flex mt-auto pt-10 items-center justify-between">
-      <span>
-        Showing {PAGE_SIZE * (currentPage - 1) + 1} to{" "}
-        {Math.min(PAGE_SIZE * currentPage, productsSize)} of {productsSize}{" "}
-        products
-      </span>
+      {productsSize === 0 ? (
+        <span>No products displayed</span>
+      ) : (
+        <span>
+          Showing {PAGE_SIZE * (currentPage - 1) + 1} to{" "}
+          {Math.min(PAGE_SIZE * currentPage, productsSize)} of {productsSize}{" "}
+          products
+        </span>
+      )}
       <div className="flex items-center gap-6">
         <button
           onClick={handlePrevPage}

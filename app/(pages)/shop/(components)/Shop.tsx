@@ -28,7 +28,7 @@ function Shop({ products, status, page }: Props) {
   const paginatedProducts = priceFilteredProducts?.slice(0 + (page - 1) * PAGE_SIZE, PAGE_SIZE + PAGE_SIZE * (page - 1) );
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col grow">
       <div className="flex items-center mt-10">
         <Slider values={priceRange} setValues={setPriceRange} />
         <Filter value="status" filter={status} />

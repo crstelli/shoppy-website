@@ -1,8 +1,8 @@
 export interface CartProduct {
-  price: number;
-  name: string;
-  quantity: number;
   id: number;
+  name: string;
+  price: number;
+  quantity: number;
   image_path: string;
   max_quantity: number;
 }

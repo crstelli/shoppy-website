@@ -13,7 +13,7 @@ async function Navbar() {
 
   return (
     <nav className="grid grid-cols-3 shadow-2xl bg-gray-800 rounded-full px-10 py-2">
-      <Link href="/">
+      <Link href="/" className="justify-self-start">
         <Image
           src={logo}
           alt="Comprany logo"
