@@ -12,6 +12,7 @@ function DeleteButton({ orderId }: { orderId: number }) {
       onSubmit={async () => {
         await cancelOrder(orderId);
         router.back();
+        router.refresh();
         toast.success("Order deleted successfully");
       }}
     >

@@ -81,3 +81,25 @@ export async function deleteOrder(orderId: number) {
 
   if (orderError) throw orderError;
 }
+
+export async function editOrder(
+  orderId: number,
+  address?: string,
+  info?: string
+) {
+  const updates: {
+    address?: string | undefined;
+    info?: string | undefined;
+  } = {};
+  if (address !== "") updates.address = address;
+  if (info !== "") updates.info = info;
+
+  console.log(updates);
+
+  const { error } = await supabase
+    .from("orders")
+    .update({ ...updates })
+    .eq("id", orderId);
+
+  if (error) throw error;
+}

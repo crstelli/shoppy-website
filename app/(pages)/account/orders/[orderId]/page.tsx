@@ -1,9 +1,8 @@
-import { Button } from "@/app/(components)/Button";
 import { getOrder } from "@/app/(services)/apiOrders";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { cancelOrder } from "@/app/(lib)/actions";
 import { DeleteButton } from "./(components)/DeleteButton";
+import { EditOrder } from "./(components)/EditOrder";
 
 interface Props {
   params: Promise<{ orderId: string }>;
@@ -26,8 +25,10 @@ export default async function page({ params }: Props) {
         <span>Status: {order.status}</span>
         <p>Total: ${order.total}</p>
         <p>Estimated delivery: {order.delivery || "Unknown"}</p>
+        <p>Additional info: {order.info || "No info"}</p>
+        <p>Address: {order.address}</p>
         <DeleteButton orderId={order.id} />
-        {/* <Button onClick={handleEdit}>Edit</Button> */}
+        <EditOrder orderId={order.id} />
       </div>
     </div>
   );
