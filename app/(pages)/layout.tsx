@@ -5,6 +5,7 @@ import { CartProvider } from "../(contexts)/CartContext";
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
 import { Footer } from "@/app/(components)/Footer";
 import { Toaster } from "react-hot-toast";
+import { CartMessage } from "./shop/(components)/CartMessage";
 
 interface Props {
   children: React.ReactNode;
@@ -30,9 +31,10 @@ export default function Layout({ children }: Props) {
           }}
         />
         <CartProvider>
-          <div className="w-[90%] max-w-[1100px] min-h-screen flex flex-col py-10 mx-auto grow">
+          <div className="w-[90%] relative max-w-[1100px] min-h-screen flex flex-col py-10 mx-auto grow">
             <Navbar />
             <main className="flex flex-col grow">{children}</main>
+            <CartMessage />
           </div>
         </CartProvider>
         <Footer />
