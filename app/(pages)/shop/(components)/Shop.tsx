@@ -18,7 +18,7 @@ interface Props {
 }
 
 function Shop({ products, status, page }: Props) {
-  const [priceRange, setPriceRange] = useState<[number, number]>([20, 100]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);
 
   /* prettier-ignore */
   const statusFilteredProducts = status === "all" ? products : products.filter((prod) => prod.status.replaceAll(" ", "") === status);
