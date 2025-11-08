@@ -94,8 +94,6 @@ export async function editOrder(
   if (address !== "") updates.address = address;
   if (info !== "") updates.info = info;
 
-  console.log(updates);
-
   const { error } = await supabase
     .from("orders")
     .update({ ...updates })
