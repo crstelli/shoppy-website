@@ -14,7 +14,7 @@ function EditOrder({ orderId }: Props) {
   const [info, setInfo] = useState("");
   return (
     <form
-      className="flex flex-col gap-2 items-center"
+      className="flex flex-col gap-2"
       onSubmit={(e) => {
         e.preventDefault();
         updateOrder(orderId, address, info);
@@ -29,17 +29,24 @@ function EditOrder({ orderId }: Props) {
       <input
         value={address}
         onChange={(e) => setAddress(e.target.value)}
-        className="bg-gray-700 focus:outline-none px-2 py-1"
+        className="bg-gray-700 focus:outline-none px-2 py-1 rounded-md"
         type="text"
       />
       <label>Add some info</label>
       <input
         value={info}
         onChange={(e) => setInfo(e.target.value)}
-        className="bg-gray-700 focus:outline-none px-2 py-1"
+        className="bg-gray-700 focus:outline-none px-2 py-1 rounded-md"
         type="text"
       />
-      <Button variant="secondary" type="submit">
+
+      <Button
+        variant="secondary"
+        type="submit"
+        className={`${
+          address || info ? "opacity-100" : "opacity-0 -z-1"
+        } self-start`}
+      >
         Save
       </Button>
     </form>

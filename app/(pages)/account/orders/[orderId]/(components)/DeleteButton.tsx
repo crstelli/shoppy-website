@@ -16,7 +16,9 @@ function DeleteButton({ orderId }: { orderId: number }) {
         toast.success("Order deleted successfully");
       }}
     >
-      <Button type="submit">Delete Order</Button>
+      <Button variant="danger" type="submit">
+        Delete Order
+      </Button>
     </form>
   );
 }

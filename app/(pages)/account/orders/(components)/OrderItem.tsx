@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import type { Order } from "@/app/(interfaces)/Order";
 import { getTagStyle } from "@/app/(lib)/getTagStyle";
 
+import { Button } from "@/app/(components)/Button";
 import { Tag } from "@/app/(components)/Tag";
 import { Info } from "./Info";
 
@@ -24,10 +25,10 @@ function OrderItem({ order }: Props) {
         <Tag classes={`text-sm ${tagStyle}`}>{order.status}</Tag>
       </div>
       <Link
-        className="row-span-3 justify-self-center bg-emerald-500 text-lg text-gray-900 px-4 rounded-md"
+        className="row-span-3 justify-self-center"
         href={`/account/orders/${String(order.id)}`}
       >
-        Info &rarr;
+        <Button>Info &rarr;</Button>
       </Link>
       <Info heading="Created">
         {format(new Date(order.created_at), "dd/MM/yyyy, HH:mm")}
