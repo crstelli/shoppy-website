@@ -1,7 +1,7 @@
 import { supabase } from "./supabase";
-import type { Product } from "@/app/(interfaces)/ShopProduct";
+import type { ShopProduct } from "@/app/(interfaces)/ShopProduct";
 
-export async function getProducts(): Promise<Product[] | null> {
+export async function getProducts(): Promise<ShopProduct[] | null> {
   const { data, error } = await supabase.from("products").select("*");
 
   if (error) throw error;
