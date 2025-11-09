@@ -20,10 +20,10 @@ function Item({ children, filter, value }: Props) {
   return (
     <span
       onClick={updateFilter}
-      className={`cursor-pointer px-4 py-1 rounded-sm ${
+      className={`border px-4 py-1 rounded-sm ${
         filter === children.toLowerCase()
-          ? "bg-emerald-500 text-gray-900"
-          : "bg-gray-800"
+          ? "bg-emerald-500 text-gray-900 border-emerald-500 cursor-not-allowed"
+          : "bg-gray-800 border-gray-800 hover:bg-gray-900 cursor-pointer"
       }`}
     >
       {children}

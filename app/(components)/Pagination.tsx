@@ -36,23 +36,29 @@ function Pagination({ elementsSize }: Props) {
       {elementsSize === 0 ? (
         <span>No products displayed</span>
       ) : (
-        <span>
-          Showing <strong>{PAGE_SIZE * (currentPage - 1) + 1}</strong> to{" "}
-          <strong>{Math.min(PAGE_SIZE * currentPage, elementsSize)}</strong> of{" "}
-          {elementsSize} products
+        <span className="text-gray-400">
+          Showing{" "}
+          <strong className="text-gray-300">
+            {PAGE_SIZE * (currentPage - 1) + 1}
+          </strong>{" "}
+          to{" "}
+          <strong className="text-gray-300">
+            {Math.min(PAGE_SIZE * currentPage, elementsSize)}
+          </strong>{" "}
+          of {elementsSize} products
         </span>
       )}
       <div className="flex items-center gap-6">
         <button
           onClick={handlePrevPage}
-          className="flex items-center bg-gray-800 px-2 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
+          className="flex items-center bg-gray-800 px-3 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
         >
           <ArrowLeft />
           Previous
         </button>
         <button
           onClick={handleNextPage}
-          className="flex items-center bg-gray-800 px-2 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
+          className="flex items-center bg-gray-800 px-3 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
         >
           Next
           <ArrowRight />
