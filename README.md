@@ -1,10 +1,10 @@
 # Shoppy
 
-Shoppy is a modern e-commerce where you can order digital and physical products, filter them by price and status, track your orders. Fully responsive and made with Next.js, TailwindCSS and TypeScript.
+Shoppy is a modern e-commerce platform where users can order a variety of digital and physical products, filter them by price and status, and track their orders. Fully responsive and built with Next.js, TailwindCSS, and TypeScript.
 
 !["Homepage"](./images/Home.png)
 
-!["Shop"](./images//Shop.png)
+!["Shop"](./images/Shop.png)
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ Shoppy is a modern e-commerce where you can order digital and physical products,
 git clone https://github.com/crstelli/shoppy-website
 ```
 
-2. Go into project folder
+2. Navigate into project folder
 
 ```bash
 cd shoppy
@@ -50,15 +50,16 @@ npm run dev
 http://localhost:3000
 ```
 
-## Enviroment Variables
+## Environment Variables
 
-You need to configure enviroment variables to make the app work correctly
+You need to configure environment variables for the app to work correctly.
+Create a `.env.local` file in the project root and add:
 
 ```bash
-SUPABASE_URL = Your Supabase Database URL
-SUPABASE_KEY = Your Supabase Key
+NEXT_PUBLIC_SUPABASE_URL = Your Supabase Database URL
+NEXT_PUBLIC_SUPABASE_KEY = Your Supabase Key
 
-AUTH_SECRET = Next Auth Key
+AUTH_SECRET = NextAuth Secret
 
 AUTH_GOOGLE_ID = Google Auth ID
 AUTH_GOOGLE_SECRET = Google Auth Key
@@ -66,10 +67,10 @@ AUTH_GOOGLE_SECRET = Google Auth Key
 
 ## Features
 
-- Shop products browsing
-- Filter by price range and current status
+- Browse digital and physical products
+- Filter by price range and availability
 - Add items to cart and adjust quantity
-- Full responsive design
+- Fully responsive design
 - Google Login
 - Track your orders
 - Change your default delivery address
@@ -83,4 +84,8 @@ AUTH_GOOGLE_SECRET = Google Auth Key
 
 ## Author
 
-Giuseppe - [Linkedin]() - [Portfolio]()
+Giuseppe - [LinkedIn](https://linkedin.com/in/crescitelli) - [Portfolio](https://crescitelli.dev)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
