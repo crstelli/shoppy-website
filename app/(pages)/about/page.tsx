@@ -5,6 +5,8 @@ export const metadata = {
   title: "About Us",
 };
 
+export const dynamic = "force-static";
+
 export default function page() {
   return (
     <>
