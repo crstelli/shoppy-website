@@ -1,15 +1,23 @@
 "use client";
 
-import { useCart } from "../../../(contexts)/useCart";
+import Link from "next/link";
 import { Product } from "./Product";
+
+import { useCart } from "@/app/(contexts)/useCart";
+import { Button } from "@/app/(components)/Button";
 
 function ProductsList() {
   const { cart } = useCart();
 
   return (
-    <div className="row-span-full flex flex-col gap-10">
+    <div className="row-span-full flex flex-col gap-12">
       {cart.length === 0 ? (
-        <p className="text-center mt-10 text-xl">Your cart is empty!</p>
+        <div className="text-center mt-10 text-xl flex flex-col items-center gap-2">
+          <h1>Your cart is empty!</h1>{" "}
+          <Link href="/shop">
+            <Button>Go Shopping Now</Button>
+          </Link>
+        </div>
       ) : (
         cart.map((p) => <Product product={p} key={p.id} />)
       )}
