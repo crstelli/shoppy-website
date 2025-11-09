@@ -25,8 +25,8 @@ async function Navbar() {
       </Link>
       <Navigation />
       {session?.user ? (
-        <div className="flex justify-self-end items-center gap-6 cursor-pointer">
-          <Link href="/cart">
+        <div className="flex justify-self-end items-center gap-6">
+          <Link href="/cart" className="hover:text-gray-400">
             <Cart />
           </Link>
           <Link href={"/account/home"}>

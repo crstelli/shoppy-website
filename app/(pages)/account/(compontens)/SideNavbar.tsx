@@ -11,13 +11,10 @@ function SideNavbar() {
       <NavItem Icon={Home}>Home</NavItem>
       <NavItem Icon={Package}>Orders</NavItem>
       <NavItem Icon={Settings}>Settings</NavItem>
-      <form
-        className="hover:bg-gray-900 px-10 py-4 cursor-pointer mt-auto"
-        action={signOutAction}
-      >
+      <form className="hover:bg-gray-900 mt-auto" action={signOutAction}>
         <button
           type="submit"
-          className="cursor-pointer flex items-center gap-3 text-gray-400"
+          className="cursor-pointer flex items-center gap-3 px-10 py-4 text-gray-400"
         >
           <LogOut />
           <span>Sign out</span>
