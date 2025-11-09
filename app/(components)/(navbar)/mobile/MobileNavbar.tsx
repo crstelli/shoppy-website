@@ -14,13 +14,13 @@ function MobileNavbar() {
       {isOpen ? (
         <X
           size={42}
-          className="absolute top-4 left-2 z-3"
+          className="min-[520px]:hidden absolute top-4 left-2 z-3"
           onClick={() => setIsOpen((open) => !open)}
         />
       ) : (
         <Menu
           size={42}
-          className="absolute top-4 left-2 z-3"
+          className="min-[520px]:hidden absolute top-4 left-2 z-3"
           onClick={() => setIsOpen((open) => !open)}
         />
       )}
