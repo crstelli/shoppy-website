@@ -15,45 +15,52 @@ export default function page() {
           <Image
             src={"/about-1.jpg"}
             fill
-            className="object-contain object-center"
+            className="object-cover object-center shadow-2xl"
             alt="Image of the shop"
           ></Image>
         </div>
-        <p className="col-span-3 text-lg text-center">
-          Nel nostro shop online trovi prodotti di ogni genere, selezionati con
-          attenzione per garantirti sempre la massima qualità e
-          un&apos;esperienza d&apos;acquisto sicura e piacevole. Ci impegniamo
-          ogni giorno per offrirti articoli affidabili, convenienti e in linea
-          con le tue esigenze, curando ogni dettaglio, dalla scelta dei
-          fornitori alla consegna del tuo ordine.
-          <br />
-          <br />
-          La tua soddisfazione è la nostra priorità assoluta: acquistare da noi
-          significa scegliere professionalità, trasparenza e un servizio clienti
-          sempre pronto ad assisterti con cortesia e competenza. Crediamo che la
-          qualità faccia la differenza e lavoriamo per renderla accessibile a
-          tutti.
-        </p>
-        <p className="col-span-2 text-lg text-center">
-          Aggiorniamo costantemente il nostro catalogo per offrirti le ultime
-          novità e le migliori offerte.
-          <br />
-          <br />
-          Ogni ordine è gestito con attenzione e spedito rapidamente, perché
-          crediamo che un&apos;esperienza d&apos;acquisto semplice e piacevole
-          renda ogni cliente davvero felice.
-        </p>
+        <div className="col-span-3 text-lg text-end grid grid-rows-[auto_1fr_1fr] gap-10">
+          <h3 className="text-emerald-600 text-4xl">Quality Above All</h3>
+          <p>
+            In our online store, you’ll find a wide range of products carefully
+            selected to ensure the highest quality and a safe, enjoyable
+            shopping experience. Every day, we strive to offer reliable,
+            affordable items that meet your needs, paying attention to every
+            detail—from choosing trusted suppliers to delivering your order with
+            care.
+          </p>
+          <p>
+            Your satisfaction is our top priority. Shopping with us means
+            choosing professionalism, honesty, and a customer service team
+            always ready to help with courtesy and expertise. We believe that
+            true quality makes the difference, and we work hard to make it
+            accessible to everyone.
+          </p>
+        </div>
+        <div className="col-span-2 text-lg grid grid-rows-[auto_1fr_1fr] gap-10">
+          <h3 className="text-emerald-600 text-4xl">
+            Always Fresh, Always for You
+          </h3>
+          <p>
+            We regularly update our catalog with new arrivals and great offers.
+            Every item is chosen to guarantee quality and style.
+          </p>
+          <p>
+            Each order is prepared with care and shipped fast, because we want
+            your shopping experience to be easy and enjoyable.
+          </p>
+        </div>
         <div className="aspect-video col-span-3 w-full relative">
           <div className="absolute top-0 left-0 w-full h-full z-1 bg-gray-900/40"></div>
           <Image
             src="/about-2.jpg"
             fill
             alt="Another image of the shop"
-            className="object-contain object-center"
+            className="object-cover object-center shadow-2xl"
           ></Image>
         </div>
-        <h2 className="col-span-full justify-self-center text-5xl font-serif text-white border-b-3 px-6 rounded-xl border-emerald-500">
-          We love our customers
+        <h2 className="col-span-full justify-self-center text-5xl font-serif text-white border-b-3 px-6 py-2 border-emerald-500">
+          Quality and trust, delivered to you
         </h2>
       </div>
     </>
