@@ -20,7 +20,7 @@ export async function createCustomer(email: string, full_name: string) {
   return data;
 }
 
-export async function updateCustomer(user, address) {
+export async function updateCustomer(user: string, address: string) {
   const { data, error } = await supabase
     .from("customers")
     .update({ address })
