@@ -20,9 +20,16 @@ function Slider({ values, setValues }: Props) {
             {children}
           </div>
         )}
-        renderThumb={({ props }) => (
-          <div {...props} className="w-4 h-4 bg-emerald-500 rounded-full" />
-        )}
+        renderThumb={({ props }) => {
+          const { key, ...rest } = props;
+          return (
+            <div
+              {...rest}
+              key={key}
+              className="w-4 h-4 bg-emerald-500 rounded-full"
+            />
+          );
+        }}
       />
       <div className="text-center">
         ${values[0]} - ${values[1]}
