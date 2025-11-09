@@ -1,20 +1,28 @@
-interface Props {
-  children: string;
-  onClick?: () => void;
-  classes?: React.ComponentProps<"button">["className"];
-  type?: "submit" | "reset" | "button";
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "tertiary" | "danger";
+  className?: string;
 }
 
-function Button({ children, classes, type = "button", onClick }: Props) {
+export function Button({
+  variant = "primary",
+  className,
+  ...props
+}: ButtonProps) {
+  const base = "duration-150 cursor-pointer px-4 rounded-md";
+  const variants = {
+    primary:
+      "bg-emerald-500 hover:bg-emerald-600 uppercase text-gray-900 font-semibold py-1",
+    secondary: "bg-emerald-400 text-gray-800 hover:bg-emerald-500 py-0.5",
+    tertiary: "bg-gray-900 hover:bg-gray-950",
+
+    danger:
+      "text-red-500/60 border border-red-500/60 hover:bg-red-500/60 hover:text-gray-900 uppercase font-semibold py-1",
+  };
+
   return (
     <button
-      type={type}
-      onClick={onClick}
-      className={`bg-emerald-500 hover:bg-emerald-600 cursor-pointer duration-150 self-center uppercase px-4 py-1 rounded-md text-gray-900 font-semibold ${classes}`}
-    >
-      {children}
-    </button>
+      className={`${base} ${variants[variant]} ${className}`}
+      {...props}
+    />
   );
 }
-
-export { Button };

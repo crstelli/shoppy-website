@@ -31,7 +31,9 @@ function Product({ product }: Props) {
       />
       <h3 className="text-gray-400 text-lg">${product.price}</h3>
       <div></div>
-      <Button onClick={() => removeFromCart(product.id)}>Remove</Button>
+      <Button variant="danger" onClick={() => removeFromCart(product.id)}>
+        Remove
+      </Button>
     </div>
   );
 }

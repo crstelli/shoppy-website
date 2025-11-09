@@ -52,7 +52,7 @@ function Checkout({ info }: Props) {
             Total: ${total.toLocaleString()}
           </p>
           <Button
-            classes="mt-2"
+            className="mt-2"
             onClick={() => {
               if (address.length > 3) {
                 createOrder(cart, address);

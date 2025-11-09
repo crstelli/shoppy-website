@@ -47,7 +47,7 @@ function Product({ product }: Props) {
               </span>
             ) : (
               <Button
-                classes="border-2 border-transparent"
+                className="border-2 border-transparent"
                 onClick={() => addToCart(product)}
               >
                 Add to Cart

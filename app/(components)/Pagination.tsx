@@ -4,6 +4,7 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 import { PAGE_SIZE } from "@/app/(lib)/constants";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "./Button";
 
 interface Props {
   elementsSize: number;
@@ -49,20 +50,22 @@ function Pagination({ elementsSize }: Props) {
         </span>
       )}
       <div className="flex items-center gap-6">
-        <button
+        <Button
+          variant="tertiary"
           onClick={handlePrevPage}
-          className="flex items-center bg-gray-800 px-3 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
+          className="flex items-center border border-gray-800 hover:bg-gray-900"
         >
           <ArrowLeft />
           Previous
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="tertiary"
           onClick={handleNextPage}
-          className="flex items-center bg-gray-800 px-3 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
+          className="flex items-center border border-gray-800 hover:bg-gray-900"
         >
           Next
           <ArrowRight />
-        </button>
+        </Button>
       </div>
     </div>
   );

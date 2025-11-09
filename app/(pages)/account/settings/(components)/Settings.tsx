@@ -3,6 +3,7 @@
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { updateAddress } from "@/app/(lib)/actions";
+import { Button } from "@/app/(components)/Button";
 
 interface Props {
   defaultAddress: string;
@@ -29,12 +30,9 @@ function Settings({ defaultAddress }: Props) {
           type="text"
         />
         {address !== defaultAddress && address.length > 3 && (
-          <button
-            type="submit"
-            className="bg-emerald-500 cursor-pointer text-gray-800 px-2 py-1 rounded-md"
-          >
+          <Button variant="secondary" type="submit">
             Save
-          </button>
+          </Button>
         )}
       </form>
     </div>

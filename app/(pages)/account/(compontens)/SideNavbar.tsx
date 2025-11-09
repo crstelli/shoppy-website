@@ -17,7 +17,7 @@ function SideNavbar() {
       >
         <button
           type="submit"
-          className="cursor-pointer flex items-center gap-3 text-gray-500"
+          className="cursor-pointer flex items-center gap-3 text-gray-400"
         >
           <LogOut />
           <span>Sign out</span>

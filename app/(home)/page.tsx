@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import bg from "@/public/background.jpg";
 import { TextLogo } from "@/app/(components)/TextLogo";
+import { Button } from "@/app/(components)/Button";
+
+import bg from "@/public/background.jpg";
 
 export default function Home() {
   return (
@@ -23,11 +25,8 @@ export default function Home() {
           <h1 className="text-6xl text-white">The Shopping</h1>
           <br />
           <h2 className="text-4xl uppercase font-thin">Made Right</h2>
-          <Link
-            href="/shop"
-            className="bg-emerald-500 shadow-2xl hover:bg-emerald-600 cursor-pointer self-center uppercase mt-19 text-xl px-4 py-2 rounded-md text-gray-900 font-bold"
-          >
-            Go to our store
+          <Link href="/shop" className="mt-19">
+            <Button className="shadow-2xl text-2xl">Go to our store</Button>
           </Link>
         </div>
       </div>

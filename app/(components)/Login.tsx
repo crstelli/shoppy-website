@@ -1,3 +1,4 @@
+import { Button } from "./Button";
 import { signIn } from "../(lib)/auth";
 
 function Login() {
@@ -9,12 +10,9 @@ function Login() {
         await signIn("google", { redirectTo: "/account/home" });
       }}
     >
-      <button
-        type="submit"
-        className="bg-gray-900 hover:bg-gray-950 duration-150 px-4 py-1 rounded-md cursor-pointer text-lg"
-      >
+      <Button variant="tertiary" className="text-lg" type="submit">
         Log In
-      </button>
+      </Button>
     </form>
   );
 }

@@ -12,10 +12,10 @@ function ProductsList() {
   return (
     <div className="row-span-full flex flex-col gap-12">
       {cart.length === 0 ? (
-        <div className="text-center mt-10 text-xl flex flex-col items-center gap-2">
-          <h1>Your cart is empty!</h1>{" "}
+        <div className="text-center mt-10 flex flex-col items-center gap-2">
+          <h1 className="text-lg">Your cart is empty!</h1>{" "}
           <Link href="/shop">
-            <Button>Go Shopping Now</Button>
+            <Button className="mt-4 text-lg">Go Shopping Now</Button>
           </Link>
         </div>
       ) : (

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/app/(components)/Button";
 import { updateOrder } from "@/app/(lib)/actions";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -38,12 +39,9 @@ function EditOrder({ orderId }: Props) {
         className="bg-gray-700 focus:outline-none px-2 py-1"
         type="text"
       />
-      <button
-        type="submit"
-        className="bg-emerald-500 cursor-pointer text-gray-800 px-2 py-1 rounded-md"
-      >
+      <Button variant="secondary" type="submit">
         Save
-      </button>
+      </Button>
     </form>
   );
 }
