@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shoppy
 
-## Getting Started
+Shoppy is a modern e-commerce where you can order digital and physical products, filter them by price and status, track your orders. Fully responsive and made with Next.js, TailwindCSS and TypeScript.
 
-First, run the development server:
+!["Homepage"](./images/Home.png)
+
+!["Shop"](./images//Shop.png)
+
+## Tech Stack
+
+- React 19.2
+- Next.js 16.0.1
+- TailwindCSS 4.1
+- TypeScript
+- Supabase
+- date-fns
+- lucide-react
+- react-hot-toast
+- react-range
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/crstelli/shoppy-website
+```
+
+2. Go into project folder
+
+```bash
+cd shoppy
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Enviroment Variables
 
-## Learn More
+You need to configure enviroment variables to make the app work correctly
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+SUPABASE_URL = Your Supabase Database URL
+SUPABASE_KEY = Your Supabase Key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+AUTH_SECRET = Next Auth Key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+AUTH_GOOGLE_ID = Google Auth ID
+AUTH_GOOGLE_SECRET = Google Auth Key
+```
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Shop products browsing
+- Filter by price range and current status
+- Add items to cart and adjust quantity
+- Full responsive design
+- Google Login
+- Track your orders
+- Change your default delivery address
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Improvements
+
+- Real payments integration
+- Delivery address auto-suggestion
+- Wishlist
+- Tracking notifications
+
+## Author
+
+Giuseppe - [Linkedin]() - [Portfolio]()
