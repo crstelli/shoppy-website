@@ -5,6 +5,10 @@ interface Props {
   children: React.ReactNode;
 }
 
+export const metadata = {
+  title: "Account",
+};
+
 export default function Layout({ children }: Props) {
   return (
     <>

@@ -3,4 +3,6 @@ export function getTagStyle(
 ): React.ComponentProps<"div">["className"] {
   if (status === "active") return "bg-green-400";
   if (status === "sold out") return "bg-red-400";
+
+  if (status === "received") return "bg-gray-400";
 }
