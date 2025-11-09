@@ -5,7 +5,7 @@ import { Outfit } from "next/font/google";
 import { CartProvider } from "../(contexts)/CartContext";
 import { CartMessage } from "./shop/(components)/CartMessage";
 
-import { Navbar } from "@/app/(components)/(navbar)/Navbar";
+import { Navbar } from "@/app/(components)/(navbar)/desktop/Navbar";
 import { Footer } from "@/app/(components)/Footer";
 
 interface Props {
@@ -32,7 +32,7 @@ export default function Layout({ children }: Props) {
           }}
         />
         <CartProvider>
-          <div className="w-[90%] relative max-w-[1100px] min-h-screen flex flex-col py-10 mx-auto grow">
+          <div className="w-[95%] relative max-w-[1100px] min-h-screen flex flex-col py-10 mx-auto grow">
             <Navbar />
             <main className="flex flex-col grow">{children}</main>
             <CartMessage />

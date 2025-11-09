@@ -26,7 +26,9 @@ export default function Home() {
           <br />
           <h2 className="text-4xl uppercase font-thin">Made Right</h2>
           <Link href="/shop" className="mt-19">
-            <Button className="shadow-2xl text-2xl">Go to our store</Button>
+            <Button className="shadow-2xl text-xl sm:text-2xl">
+              Go to our store
+            </Button>
           </Link>
         </div>
       </div>

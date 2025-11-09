@@ -21,14 +21,14 @@ function Pagination({ elementsSize }: Props) {
   function handleNextPage() {
     if (currentPage * PAGE_SIZE < elementsSize) {
       params.set("page", String(currentPage + 1));
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+      router.replace(`${pathname}?${params.toString()}`);
     }
   }
 
   function handlePrevPage() {
     if (currentPage > 1) {
       params.set("page", String(currentPage - 1));
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+      router.replace(`${pathname}?${params.toString()}`);
     }
   }
 

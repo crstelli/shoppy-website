@@ -7,7 +7,7 @@ interface Props {
 
 function Filter({ value, filter }: Props) {
   return (
-    <div className="text-xl flex gap-2 ml-auto">
+    <div className="text-xl flex gap-2">
       <Item value={value} filter={filter}>
         All
       </Item>

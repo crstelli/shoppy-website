@@ -29,11 +29,11 @@ function Shop({ products, status, page }: Props) {
 
   return (
     <div className="flex flex-col grow">
-      <div className="flex items-center mt-10">
+      <div className="flex flex-col sm:flex-row gap-6 justify-between items-center mt-10">
         <Slider values={priceRange} setValues={setPriceRange} />
         <Filter value="status" filter={status} />
       </div>
-      <div className="grid grid-cols-3 gap-y-20 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-20 mt-12">
         {paginatedProducts?.map(
           (p) => p.status !== "hidden" && <Product product={p} key={p.id} />
         )}
