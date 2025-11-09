@@ -41,6 +41,7 @@ export async function updateAddress(newAddress: string) {
     const userId = (await getCustomer(session.user.email)).uuid;
 
     await updateCustomer(userId, newAddress);
+    revalidatePath("/account/settings");
   }
 }
 
