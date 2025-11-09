@@ -21,11 +21,11 @@ export default function page() {
         </div>
         <p className="col-span-3 text-lg text-center">
           Nel nostro shop online trovi prodotti di ogni genere, selezionati con
-          attenzione per garantirti sempre la massima qualità e un’esperienza
-          d’acquisto sicura e piacevole. Ci impegniamo ogni giorno per offrirti
-          articoli affidabili, convenienti e in linea con le tue esigenze,
-          curando ogni dettaglio, dalla scelta dei fornitori alla consegna del
-          tuo ordine.
+          attenzione per garantirti sempre la massima qualità e
+          un&apos;esperienza d&apos;acquisto sicura e piacevole. Ci impegniamo
+          ogni giorno per offrirti articoli affidabili, convenienti e in linea
+          con le tue esigenze, curando ogni dettaglio, dalla scelta dei
+          fornitori alla consegna del tuo ordine.
           <br />
           <br />
           La tua soddisfazione è la nostra priorità assoluta: acquistare da noi
@@ -40,8 +40,8 @@ export default function page() {
           <br />
           <br />
           Ogni ordine è gestito con attenzione e spedito rapidamente, perché
-          crediamo che un’esperienza d’acquisto semplice e piacevole renda ogni
-          cliente davvero felice.
+          crediamo che un&apos;esperienza d&apos;acquisto semplice e piacevole
+          renda ogni cliente davvero felice.
         </p>
         <div className="aspect-video col-span-3 w-full relative">
           <div className="absolute top-0 left-0 w-full h-full z-1 bg-gray-900/40"></div>

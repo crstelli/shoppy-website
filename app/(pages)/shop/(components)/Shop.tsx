@@ -9,7 +9,7 @@ import { Filter } from "@/app/(components)/(filter)/Filter";
 import { Slider } from "@/app/(components)/Slider";
 
 import { Product } from "./Product";
-import { Pagination } from "./Pagination";
+import { Pagination } from "../../../(components)/Pagination";
 
 interface Props {
   products: ShopProduct[];
@@ -38,7 +38,7 @@ function Shop({ products, status, page }: Props) {
           (p) => p.status !== "hidden" && <Product product={p} key={p.id} />
         )}
       </div>
-      <Pagination productsSize={priceFilteredProducts?.length} />
+      <Pagination elementsSize={priceFilteredProducts?.length} />
     </div>
   );
 }

@@ -1,15 +1,15 @@
 "use client";
 
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+
 import { PAGE_SIZE } from "@/app/(lib)/constants";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 
 interface Props {
-  productsSize: number;
+  elementsSize: number;
 }
 
-function Pagination({ productsSize }: Props) {
+function Pagination({ elementsSize }: Props) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -18,7 +18,7 @@ function Pagination({ productsSize }: Props) {
   const currentPage = Number(params.get("page") || 1);
 
   function handleNextPage() {
-    if (currentPage * PAGE_SIZE < productsSize) {
+    if (currentPage * PAGE_SIZE < elementsSize) {
       params.set("page", String(currentPage + 1));
       router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
@@ -33,26 +33,26 @@ function Pagination({ productsSize }: Props) {
 
   return (
     <div className="flex mt-auto pt-10 items-center justify-between">
-      {productsSize === 0 ? (
+      {elementsSize === 0 ? (
         <span>No products displayed</span>
       ) : (
         <span>
-          Showing {PAGE_SIZE * (currentPage - 1) + 1} to{" "}
-          {Math.min(PAGE_SIZE * currentPage, productsSize)} of {productsSize}{" "}
-          products
+          Showing <strong>{PAGE_SIZE * (currentPage - 1) + 1}</strong> to{" "}
+          <strong>{Math.min(PAGE_SIZE * currentPage, elementsSize)}</strong> of{" "}
+          {elementsSize} products
         </span>
       )}
       <div className="flex items-center gap-6">
         <button
           onClick={handlePrevPage}
-          className="flex items-center bg-gray-800 px-2 py-1 rounded-md cursor-pointer"
+          className="flex items-center bg-gray-800 px-2 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
         >
           <ArrowLeft />
-          Prev
+          Previous
         </button>
         <button
           onClick={handleNextPage}
-          className="flex items-center bg-gray-800 px-2 py-1 rounded-md cursor-pointer"
+          className="flex items-center bg-gray-800 px-2 py-1 gap-1 duration-150 rounded-md cursor-pointer border border-gray-800 hover:bg-gray-900"
         >
           Next
           <ArrowRight />
