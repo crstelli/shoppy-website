@@ -15,12 +15,12 @@ function NavItem({ children, Icon }: Props) {
   return (
     <Link href={`/account/${children.toLowerCase()}`}>
       <li
-        className={`hover:bg-gray-900 flex items-center gap-3 px-10 py-4 cursor-pointer ${
+        className={`hover:bg-gray-900 flex items-center gap-3 px-4 md:px-10 py-4 cursor-pointer ${
           isActive ? "bg-gray-900" : "text-gray-500"
         }`}
       >
         <Icon />
-        {children}
+        <span className="max-md:hidden">{children}</span>
       </li>
     </Link>
   );

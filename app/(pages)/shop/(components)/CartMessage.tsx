@@ -14,7 +14,7 @@ function CartMessage() {
 
   if (cart.length > 0 && !pathname.startsWith("/cart") && isOpen)
     return (
-      <div className="fixed border border-gray-700 z-1 shadow-2xl bottom-6 left-1/2 -translate-x-1/2 text-center bg-gray-800 rounded-md text-lg flex flex-col gap-4 px-10 py-4 text-gray-300">
+      <div className="fixed w-[90%] max-w-[450px] border border-gray-700 z-1 shadow-2xl bottom-6 left-1/2 -translate-x-1/2 text-center bg-gray-800 rounded-md text-lg flex flex-col gap-4 px-10 py-4 text-gray-300">
         <X
           onClick={() => setIsOpen(false)}
           className="absolute top-1 right-1 cursor-pointer"

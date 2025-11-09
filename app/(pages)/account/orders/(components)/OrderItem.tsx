@@ -18,14 +18,14 @@ function OrderItem({ order }: Props) {
   return (
     <div
       key={order.id}
-      className="grid grid-cols-3 bg-gray-800 text-gray-400 px-4 py-2 gap-y-1 rounded-md items-center"
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 bg-gray-800 text-gray-400 px-4 py-2 gap-y-1 rounded-md items-center"
     >
-      <div className="flex items-center col-span-2 gap-4 mb-4">
+      <div className="flex items-center md:col-span-2 gap-4 mb-4">
         <h2 className="font-bold text-xl text-gray-100">Order #{order.id}</h2>
         <Tag classes={`text-sm ${tagStyle}`}>{order.status}</Tag>
       </div>
       <Link
-        className="row-span-3 justify-self-center"
+        className="row-start-6 max-sm:mt-4 sm:col-start-2 sm:justify-self-end sm:mb-4 sm:row-start-1 md:row-span-3 md:justify-self-center"
         href={`/account/orders/${String(order.id)}`}
       >
         <Button>Info &rarr;</Button>

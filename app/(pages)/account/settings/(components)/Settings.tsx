@@ -15,7 +15,7 @@ function Settings({ defaultAddress }: Props) {
   return (
     <div>
       <form
-        className="flex gap-4 items-center"
+        className="flex max-md:flex-col gap-4 md:items-center max-w-[300px]"
         onSubmit={(e) => {
           e.preventDefault();
           updateAddress(address);
