@@ -33,7 +33,7 @@ function Pagination({ elementsSize }: Props) {
   }
 
   return (
-    <div className="flex mt-auto pt-10 items-center justify-between">
+    <div className="flex max-sm:flex-col max-sm:gap-4 mt-auto pt-10 items-center justify-between">
       {elementsSize === 0 ? (
         <span>No products displayed</span>
       ) : (
