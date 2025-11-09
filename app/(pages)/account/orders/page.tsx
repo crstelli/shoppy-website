@@ -1,5 +1,6 @@
-import { Spinner } from "@/app/(components)/Spinner";
 import { Suspense } from "react";
+
+import { Spinner } from "@/app/(components)/Spinner";
 import { OrdersList } from "./(components)/OrdersList";
 
 export default async function page() {
