@@ -2,7 +2,9 @@ import { auth } from "@/app/(lib)/auth";
 
 import { getCustomer } from "@/app/(services)/apiCustomers";
 import { fetchSettings } from "@/app/(services)/apiSettings";
+
 import { Login } from "@/app/(components)/Login";
+import { Title } from "@/app/(components)/Title";
 
 import { Checkout } from "./(components)/Checkout";
 import { ProductsList } from "./(components)/ProductsList";
@@ -15,10 +17,13 @@ export default async function page() {
       (await getCustomer(session?.user?.email)).address || "";
 
     return (
-      <div className="grid grid-cols-[1fr_350px] gap-10 grid-rows-3 h-full grow mt-10">
-        <ProductsList />
-        <Checkout info={{ defaultAddress, deliveryPrice }} />
-      </div>
+      <>
+        <Title>Cart</Title>
+        <div className="flex flex-col lg:grid lg:grid-cols-[1fr_350px] gap-10 grid-rows-3 h-full grow mt-12">
+          <ProductsList />
+          <Checkout info={{ defaultAddress, deliveryPrice }} />
+        </div>
+      </>
     );
   } else {
     return (

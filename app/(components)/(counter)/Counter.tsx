@@ -13,7 +13,7 @@ function Counter({ id, quantity, max }: Props) {
   const { editQuantity } = useCart();
 
   return (
-    <div className="row-span-2 grid grid-cols-3 justify-items-center gap-4 items-center justify-center">
+    <div className="justify-self-center lg:-col-start-1 lg:row-start-1 grid grid-cols-3 justify-items-center gap-4 items-center justify-center">
       {quantity > 1 ? (
         <Operator
           classes="justify-self-end"
@@ -24,7 +24,7 @@ function Counter({ id, quantity, max }: Props) {
       ) : (
         <div></div>
       )}
-      <span className="text-3xl justify-self-center">{quantity}</span>
+      <span className="text-xl justify-self-center">{quantity}</span>
       {quantity < max ? (
         <Operator
           classes="justify-self-start"
