@@ -22,12 +22,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body
-        className={`max-w-screen selection:bg-emerald-500 selection:text-gray-800 flex flex-col ${outfit.className}`}
-      >
-        <div className="h-screen relative flex">{children}</div>
-      </body>
-    </html>
+    <main
+      className={`h-screen relative flex selection:bg-emerald-500 selection:text-gray-800 ${outfit.className}`}
+    >
+      {children}
+    </main>
   );
 }

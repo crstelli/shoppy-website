@@ -21,7 +21,7 @@ function Checkout({ info }: Props) {
     cart.reduce((acc, product) => acc + product.quantity * product.price, 0);
 
   return (
-    <div className="bg-gray-800 max-w-[500px] min-h-[500px] mx-auto py-3 px-5 row-span-2 rounded-md flex flex-col">
+    <div className="bg-gray-800 max-w-[500px] min-w-[300px] min-h-[500px] mx-auto py-3 px-5 row-span-2 rounded-md flex flex-col">
       <h4 className="text-center text-2xl mb-4 border-b-2 px-3 self-center border-emerald-500">
         Your Cart
       </h4>
