@@ -1,6 +1,7 @@
 import { supabase } from "./supabase";
 
 import type { OrderItem } from "../(interfaces)/OrderItem";
+import { DEV_MODE } from "../(lib)/constants";
 
 export async function fetchOrder(
   total: number,
@@ -46,13 +47,22 @@ export async function fetchDeliveryPrice() {
 }
 
 export async function getOrders(uuid: string) {
-  const { data, error } = await supabase
-    .from("orders")
-    .select("*")
-    .eq("user_id", uuid);
+  if (DEV_MODE) {
+    const { data, error } = await supabase.from("orders").select("*");
+    // .eq("user_id", uuid);
+    // In DevMode, all users che access all orders, only to show UI.
 
-  if (error) throw error;
-  return data;
+    if (error) throw error;
+    return data;
+  } else {
+    const { data, error } = await supabase
+      .from("orders")
+      .select("*")
+      .eq("user_id", uuid);
+
+    if (error) throw error;
+    return data;
+  }
 }
 
 export async function getOrder(id: number) {

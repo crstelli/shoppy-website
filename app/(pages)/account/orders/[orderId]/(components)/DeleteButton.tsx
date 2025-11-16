@@ -9,7 +9,8 @@ function DeleteButton({ orderId }: { orderId: number }) {
   const router = useRouter();
   return (
     <form
-      onSubmit={async () => {
+      onSubmit={async (e) => {
+        e.preventDefault();
         const response = await cancelOrder(orderId);
 
         if (response.ok) {
