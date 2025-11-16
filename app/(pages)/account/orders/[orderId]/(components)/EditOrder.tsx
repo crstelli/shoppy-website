@@ -15,14 +15,18 @@ function EditOrder({ orderId }: Props) {
   return (
     <form
       className="flex flex-col gap-2"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        updateOrder(orderId, address, info);
+        const response = await updateOrder(orderId, address, info);
 
-        setAddress("");
-        setInfo("");
+        if (response.ok) {
+          setAddress("");
+          setInfo("");
 
-        toast.success("Order updated successfully.");
+          toast.success("Order updated successfully.");
+        } else {
+          toast.error(response.message);
+        }
       }}
     >
       <label>Delivery Address</label>
