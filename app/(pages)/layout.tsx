@@ -1,6 +1,5 @@
 import "@/app/(styles)/globals.css";
 import { Toaster } from "react-hot-toast";
-import { Outfit } from "next/font/google";
 
 import { CartProvider } from "../(contexts)/CartContext";
 import { CartMessage } from "./shop/(components)/CartMessage";
@@ -11,11 +10,6 @@ import { Footer } from "@/app/(components)/Footer";
 interface Props {
   children: React.ReactNode;
 }
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function Layout({ children }: Props) {
   return (
