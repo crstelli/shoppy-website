@@ -65,6 +65,8 @@ function Checkout({ info }: Props) {
                 } else {
                   toast.error(response.message);
                 }
+              } else {
+                toast.error("Invalid delivery address");
               }
             }}
           >
