@@ -20,12 +20,15 @@ interface Props {
 function Shop({ products, status, page }: Props) {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);
 
+  const noHiddenProducts = products.filter((prod) => prod.status !== "hidden");
   /* prettier-ignore */
-  const statusFilteredProducts = status === "all" ? products : products.filter((prod) => prod.status.replaceAll(" ", "") === status);
+  const statusFilteredProducts = status === "all" ? noHiddenProducts : noHiddenProducts.filter((prod) => prod.status.replaceAll(" ", "") === status);
   /* prettier-ignore */
   const priceFilteredProducts = statusFilteredProducts.filter(prod => prod.price >= priceRange[0] && prod.price <= priceRange[1]);
   /* prettier-ignore */
   const paginatedProducts = priceFilteredProducts?.slice(0 + (page - 1) * PAGE_SIZE, PAGE_SIZE + PAGE_SIZE * (page - 1) );
+
+  console.log(priceFilteredProducts);
 
   return (
     <div className="flex flex-col grow">
