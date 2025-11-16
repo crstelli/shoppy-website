@@ -16,10 +16,16 @@ function Settings({ defaultAddress }: Props) {
     <div>
       <form
         className="flex max-md:flex-col gap-4 md:items-center max-md:max-w-[300px]"
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          updateAddress(address);
-          toast.success("Address updated successfully.");
+
+          const response = await updateAddress(address);
+
+          if (response.ok) {
+            toast.success("Address updated successfully.");
+          } else {
+            toast.error(response.message);
+          }
         }}
       >
         <label className="text-lg">Default Delivery Address</label>

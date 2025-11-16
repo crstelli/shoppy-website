@@ -53,14 +53,20 @@ function Checkout({ info }: Props) {
           </p>
           <Button
             className="mt-2"
-            onClick={() => {
+            onClick={async () => {
               if (address.length > 3) {
-                createOrder(cart, address);
+                const response = await createOrder(cart, address);
 
-                clearCart();
-                setAddress("");
+                if (response.ok) {
+                  clearCart();
+                  setAddress("");
 
-                toast.success("Order made succesfully");
+                  toast.success("Order made succesfully");
+                } else {
+                  toast.error(response.message);
+                }
+              } else {
+                toast.error("Invalid delivery address");
               }
             }}
           >

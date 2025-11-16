@@ -9,11 +9,17 @@ function DeleteButton({ orderId }: { orderId: number }) {
   const router = useRouter();
   return (
     <form
-      onSubmit={async () => {
-        await cancelOrder(orderId);
-        router.back();
-        router.refresh();
-        toast.success("Order deleted successfully");
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const response = await cancelOrder(orderId);
+
+        if (response.ok) {
+          router.back();
+          router.refresh();
+          toast.success("Order deleted successfully");
+        } else {
+          toast.error(response.message);
+        }
       }}
     >
       <Button variant="danger" type="submit">
