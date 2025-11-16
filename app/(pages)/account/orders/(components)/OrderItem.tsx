@@ -14,6 +14,7 @@ interface Props {
 
 function OrderItem({ order }: Props) {
   const tagStyle = getTagStyle(order.status);
+  console.log(order.status, tagStyle);
 
   return (
     <div
