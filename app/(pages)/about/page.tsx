@@ -15,10 +15,11 @@ export default function page() {
         <div className="aspect-square xl:col-span-2 xl:w-full w-[90%] max-xl:max-w-[300px] relative">
           <div className="absolute top-0 left-0 w-full h-full z-1 bg-gray-900/40"></div>
           <Image
-            src={"/about-1.jpg"}
+            src="/about-1.jpg"
             fill
             className="object-cover object-center shadow-2xl"
             alt="Image of the shop"
+            sizes="400px"
           ></Image>
         </div>
         <div className="col-span-3 text-lg max-w-[800px] text-center xl:text-end grid grid-rows-[auto_1fr_1fr] gap-10">
@@ -59,6 +60,7 @@ export default function page() {
             fill
             alt="Another image of the shop"
             className="object-cover object-center shadow-2xl"
+            sizes="650px"
           ></Image>
         </div>
         <h2 className="col-span-full justify-self-center text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-white text-center border-b-3 px-6 py-2 border-emerald-500">
