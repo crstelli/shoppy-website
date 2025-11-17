@@ -28,8 +28,6 @@ function Shop({ products, status, page }: Props) {
   /* prettier-ignore */
   const paginatedProducts = priceFilteredProducts?.slice(0 + (page - 1) * PAGE_SIZE, PAGE_SIZE + PAGE_SIZE * (page - 1) );
 
-  console.log(priceFilteredProducts);
-
   return (
     <div className="flex flex-col grow">
       <div className="flex flex-col sm:flex-row gap-6 justify-between items-center mt-10">

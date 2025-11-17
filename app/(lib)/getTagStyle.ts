@@ -7,4 +7,5 @@ export function getTagStyle(
   if (status === "received") return "bg-gray-400";
   if (status === "completed") return "bg-green-400";
   if (status === "canceled") return "bg-red-400";
+  if (status === "delivery") return "bg-orange-400";
 }
