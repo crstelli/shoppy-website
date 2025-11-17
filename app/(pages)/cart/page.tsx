@@ -9,6 +9,10 @@ import { Title } from "@/app/(components)/Title";
 import { Checkout } from "./(components)/Checkout";
 import { ProductsList } from "./(components)/ProductsList";
 
+export const metadata = {
+  title: "Cart",
+};
+
 export default async function page() {
   const deliveryPrice = (await fetchSettings()).delivery_price;
   const session = await auth();
