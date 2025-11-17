@@ -7,7 +7,7 @@ import { Home, Package, Settings, LogOut } from "lucide-react";
 
 function SideNavbar() {
   return (
-    <ul className="bg-gray-800 flex flex-col rounded-md h-full py-10 border border-gray-700">
+    <ul className="bg-gray-800 flex flex-col rounded-md max-h-[600px] py-10 border border-gray-700">
       <NavItem Icon={Home}>Home</NavItem>
       <NavItem Icon={Package}>Orders</NavItem>
       <NavItem Icon={Settings}>Settings</NavItem>
