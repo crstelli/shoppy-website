@@ -84,7 +84,7 @@ AUTH_GOOGLE_SECRET = Google Auth Key
 
 ## Author
 
-Giuseppe - [LinkedIn](https://linkedin.com/in/crescitelli) - [Portfolio](https://crescitelli.dev)
+Giuseppe - [LinkedIn](https://linkedin.com/in/giuseppecrescitelli) - [Portfolio](https://crescitelli.dev)
 
 ## License
 
